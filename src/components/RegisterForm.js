@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { Button, TextField, Container, Typography, Link } from '@mui/material';
+import { useNavigate, Link } from 'react-router-dom'; 
+import { Button, TextField, Container, Typography } from '@mui/material';
 
 const RegisterForm = () => {
   const [email, setEmail] = useState('');
@@ -9,6 +9,7 @@ const RegisterForm = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const API_URL = process.env.REACT_APP_API_URL; 
+
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
@@ -50,7 +51,7 @@ const RegisterForm = () => {
       </form>
       <Typography variant="body1" align="center" style={{ marginTop: '16px' }}>
         Already have an account?{' '}
-        <Link href="/" variant="body1">
+        <Link to="/" style={{ textDecoration: 'underline', color:"blue" }}>
           Login here
         </Link>
       </Typography>
